@@ -12,13 +12,13 @@ function getComputerChoice() {
 }
 
 let computerSelection = getComputerChoice();
-const playerInput = "RoCk";
+let playerInput = prompt("Are you feeling lucky?", "Rock , Papers, Scissors");
 const playerSelection = playerInput.toLowerCase();
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
 
-// Export Winner 
+// Export Winner. score calculation.
 
 function logWin() {
     
@@ -67,6 +67,7 @@ function game() {
     let round = '';
     for (let i = 1; i < 6; i++) {
         computerSelection = getComputerChoice();
+        playerInput = prompt("Are you feeling lucky?", "Rock , Papers, Scissors");
         round = i;
         playRound(); 
         console.log("Round " + round);
