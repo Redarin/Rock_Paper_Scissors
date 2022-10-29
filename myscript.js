@@ -18,7 +18,6 @@ let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
 
-
 // Export Winner 
 
 function logWin() {
@@ -62,15 +61,14 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-
 // 5 games loop.
 
 function game() {
     let round = '';
     for (let i = 1; i < 6; i++) {
         computerSelection = getComputerChoice();
-        logWin() 
         round = i;
+        playRound(); 
         console.log("Round " + round);
         console.log("Computer selected " + computerSelection);
         console.log("You selected " + playerSelection);
@@ -78,6 +76,7 @@ function game() {
         console.log("Player " + playerScore)
         console.log("Computer " + computerScore)
         console.log("Tie " + tieScore)
+        console.log("Total: " + "Player " + playerScore + ", Computer " + computerScore + ", Ties " + tieScore);
     }
 }
 
