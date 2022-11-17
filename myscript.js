@@ -13,7 +13,7 @@ function getComputerChoice() {
 
 let computerSelection = getComputerChoice();
 let playerInput = prompt("Are you feeling lucky?", "Rock , Papers, Scissors");
-const playerSelection = playerInput.toLowerCase();
+let playerSelection = playerInput.toLowerCase();
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
@@ -43,22 +43,23 @@ function logWin() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) { 
         return "Tie";
-    } else if (playerSelection == "rock") {
+    } else if (playerSelection === "rock") {
         if (computerSelection == "paper") {
             return "Lost";
         }
         return "Win";
-    } else if (playerSelection == "paper") {
+    } else if (playerSelection === "paper") {
         if (computerSelection == "scissors") {
             return "Lost";
         }
         return "Win";
-    } else {
+    } else if (playerScore === "scissors" ) {
         if (computerSelection == "rock") {
             return "Lost";
         }
         return "Win";
-    } 
+    } else 
+    return "Please input a valid choice."
 }
 
 // 5 games loop.
@@ -67,7 +68,7 @@ function game() {
     let round = '';
     for (let i = 1; i < 6; i++) {
         computerSelection = getComputerChoice();
-        playerInput = prompt("Are you feeling lucky?", "Rock , Papers, Scissors");
+        
         round = i;
         playRound(); 
         console.log("Round " + round);
